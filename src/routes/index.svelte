@@ -3,7 +3,7 @@
   import { browser } from '$app/env';
   import '../app.css';
   import Seo from '$lib/Seo.svelte';
-  import Freedom from '$lib/Freedom.svelte';
+  import Spcetime from '$lib/Spcetime.svelte';
   import Vignette from '$lib/Vignette.svelte';
   import Particles from '$lib/Particles.svelte';
   import Fader from '$lib/Fader.svelte';
@@ -22,45 +22,17 @@
   }
 </script>
 
-<style>
-  #logo_container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    pointer-events: none;
-    color: #64ff5f;
-  }
-
-  .logo {
-    position: relative;
-    max-width: 100%;
-    width: 100%;
-    height: 100%;
-  }
-
-  @media (min-width: 600px) {
-    .logo {
-      max-width: 600px;
-    }
-  }
-</style>
-
 <Seo />
 
 <main>
   {#if browser}
-    <Particles color="#a5ff99" on:particlesLoaded={() => (particlesLoaded = true)} />
+    <Particles color="#009FFF" on:particlesLoaded={() => (particlesLoaded = true)} />
   {/if}
 
   <div id="logo_container">
     <div class="logo">
       {#if state == 2}
-        <Freedom color="#64ff5f" />
+        <Spcetime color="#009FFF" />
       {/if}
     </div>
   </div>
@@ -81,7 +53,35 @@
 <noscript>
   <div id="logo_container">
     <div class="logo">
-      <Freedom color="#64ff5f" />
+      <Spcetime color="#009FFF" />
     </div>
   </div>
 </noscript>
+
+<style>
+  #logo_container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    color: #009fff;
+  }
+
+  .logo {
+    position: relative;
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+  }
+
+  @media (min-width: 600px) {
+    .logo {
+      max-width: 600px;
+    }
+  }
+</style>
